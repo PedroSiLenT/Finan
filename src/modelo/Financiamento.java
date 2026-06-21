@@ -1,15 +1,10 @@
 package modelo;
 
 public class Financiamento {
-    private String tipo;
-    private double valorImovel;
-    private int prazoFinanciamento;
-    private double taxaJurosAnual;
-
-    /* TAXA DE JUROS */
-
-    private double taxaCasa = 240.0;
-    private double taxaTerreno = 1.02;
+    protected String tipo;
+    protected double valorImovel;
+    protected int prazoFinanciamento;
+    protected double taxaJurosAnual;
 
    public Financiamento(String tipo, double valorImovel, int prazoFinanciamento, double taxaJurosAnual){
         this.tipo = tipo;
@@ -30,20 +25,20 @@ public class Financiamento {
            case "casa":
                System.out.printf("O valor do imovel é: R$ %.2f%n", valorImovel);
                System.out.printf("Prazo: %d anos | Taxa anual: %.2f%%%n", prazoFinanciamento, taxaJurosAnual);
-               System.out.printf("Pagamento Mensal: R$ %.2f%n", parcelaCasa());
-               System.out.printf("Total a ser pago: R$ %.2f%n", totalCasa());
+               System.out.printf("Pagamento Mensal: R$ %.2f%n", calcularPagamentoMensal());
+               System.out.printf("Total a ser pago: R$ %.2f%n", calcularTotalPagamento());
                break;
            case "apartamento":
                System.out.printf("O valor do imovel é: R$ %.2f%n", valorImovel);
                System.out.printf("Prazo: %d anos | Taxa anual: %.2f%%%n", prazoFinanciamento, taxaJurosAnual);
-               System.out.printf("Pagamento Mensal: R$ %.2f%n", parcelaAp());
-               System.out.printf("Total a ser pago: R$ %.2f%n", totalAp());
+               System.out.printf("Pagamento Mensal: R$ %.2f%n", calcularPagamentoMensal());
+               System.out.printf("Total a ser pago: R$ %.2f%n", calcularTotalPagamento());
                break;
            case "terreno":
                System.out.printf("O valor do imovel é: R$ %.2f%n", valorImovel);
                System.out.printf("Prazo: %d anos | Taxa anual: %.2f%%%n", prazoFinanciamento, taxaJurosAnual);
-               System.out.printf("Pagamento Mensal: R$ %.2f%n", parcelaTerreno());
-               System.out.printf("Total a ser pago: R$ %.2f%n", totalTerreno());
+               System.out.printf("Pagamento Mensal: R$ %.2f%n", calcularPagamentoMensal());
+               System.out.printf("Total a ser pago: R$ %.2f%n", calcularTotalPagamento());
                break;
        }
    }
