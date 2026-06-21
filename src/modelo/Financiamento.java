@@ -25,30 +25,6 @@ public class Financiamento {
        return calcularPagamentoMensal() * (prazoFinanciamento * 12);
    }
 
-   public double parcelaCasa() {
-       return calcularPagamentoMensal() + 240;
-   }
-
-   public double totalCasa() {
-       return parcelaCasa() * (prazoFinanciamento * 12);
-   }
-
-   public double totalAp() {
-       return (valorImovel) * (1 + (taxaJurosAnual * prazoFinanciamento));
-   }
-
-   public double parcelaAp() {
-     return (totalAp()) / (prazoFinanciamento * 12);
-   }
-
-   public double parcelaTerreno() {
-       return calcularPagamentoMensal() * 1.02;
-   }
-
-   public double totalTerreno() {
-       return parcelaTerreno() * (prazoFinanciamento * 12);
-   }
-
    public void imprimirResultado(){
        switch (tipo) {
            case "casa":
