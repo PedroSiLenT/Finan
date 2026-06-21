@@ -1,6 +1,6 @@
 package modelo;
 
-public class Financiamento {
+public abstract class Financiamento {
     protected String tipo;
     protected double valorImovel;
     protected int prazoFinanciamento;
@@ -12,13 +12,10 @@ public class Financiamento {
         this.prazoFinanciamento = prazoFinanciamento;
         this.taxaJurosAnual = taxaJurosAnual;
    }
-   public double calcularPagamentoMensal() {
-        return (valorImovel / (prazoFinanciamento * 12)) * (1 + (taxaJurosAnual / 12));
-   }
+   /* Metodo abstrato para que cada metodo seja implementado individualmente em cada subclasse */
+   public abstract double calcularPagamentoMensal();
 
-   public double calcularTotalPagamento(){
-       return calcularPagamentoMensal() * (prazoFinanciamento * 12);
-   }
+   public abstract double calcularTotalPagamento();
 
    public void imprimirResultado(){
        /* alteração feita, sem necessidade do switch neste caso  */
