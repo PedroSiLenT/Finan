@@ -46,6 +46,11 @@ public class InterfaceUsuario {
 
 
 
-        return new Financiamento(tipo, valorImovel, prazo, taxa); // Aqui instanciamento a classe financiamento e passamos os valores para o construtor
+        return switch (tipo.toLowerCase()) {
+            case "casa"        -> new Casa(tipo, valorImovel, prazo, taxa);
+            case "apartamento" -> new Apartamento(tipo, valorImovel, prazo, taxa);
+            case "terreno"     -> new Terreno(tipo, valorImovel, prazo, taxa);
+            default -> throw new IllegalArgumentException("Tipo inválido: " + tipo);
+        };
     }
 }
