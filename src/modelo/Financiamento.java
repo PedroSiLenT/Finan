@@ -21,26 +21,12 @@ public class Financiamento {
    }
 
    public void imprimirResultado(){
-       switch (tipo) {
-           case "casa":
-               System.out.printf("O valor do imovel é: R$ %.2f%n", valorImovel);
-               System.out.printf("Prazo: %d anos | Taxa anual: %.2f%%%n", prazoFinanciamento, taxaJurosAnual);
-               System.out.printf("Pagamento Mensal: R$ %.2f%n", calcularPagamentoMensal());
-               System.out.printf("Total a ser pago: R$ %.2f%n", calcularTotalPagamento());
-               break;
-           case "apartamento":
-               System.out.printf("O valor do imovel é: R$ %.2f%n", valorImovel);
-               System.out.printf("Prazo: %d anos | Taxa anual: %.2f%%%n", prazoFinanciamento, taxaJurosAnual);
-               System.out.printf("Pagamento Mensal: R$ %.2f%n", calcularPagamentoMensal());
-               System.out.printf("Total a ser pago: R$ %.2f%n", calcularTotalPagamento());
-               break;
-           case "terreno":
-               System.out.printf("O valor do imovel é: R$ %.2f%n", valorImovel);
-               System.out.printf("Prazo: %d anos | Taxa anual: %.2f%%%n", prazoFinanciamento, taxaJurosAnual);
-               System.out.printf("Pagamento Mensal: R$ %.2f%n", calcularPagamentoMensal());
-               System.out.printf("Total a ser pago: R$ %.2f%n", calcularTotalPagamento());
-               break;
-       }
+       /* alteração feita, sem necessidade do switch neste caso  */
+       System.out.println("Tipo: " + tipo);
+       System.out.printf("O valor do imovel é: R$ %.2f%n", valorImovel);
+       System.out.printf("Prazo: %d anos | Taxa anual: %.2f%%%n", prazoFinanciamento, taxaJurosAnual);
+       System.out.printf("Pagamento Mensal: R$ %.2f%n", calcularPagamentoMensal());
+       System.out.printf("Total a ser pago: R$ %.2f%n", calcularTotalPagamento());
    }
 
 }
