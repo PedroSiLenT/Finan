@@ -1,5 +1,9 @@
 package util;
 import modelo.Financiamento;
+import modelo.Apartamento;
+import modelo.Casa;
+import modelo.Financiamento;
+import modelo.Terreno;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
